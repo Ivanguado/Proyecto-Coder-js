@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"name": "MUZZARELLA",
+		"amount": 1,
+        "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
+		"price": 1200,
+        "image": "Imagenes/pizza_prueba.jpg"	
+	},
+	{
+		"id": 2,
+		"name": "Otra",
+		"amount": 1,
+        "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
+		"price": 1200,
+        "image": "Imagenes/pizza_prueba.jpg"
+	}
+
+]
+

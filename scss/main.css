@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "lobster", cursive;
+  text-align: center;
+}
+
+h2 {
+  font-family: "lobster", cursive;
+  text-align: center;
+  color: #c7bebe !important;
+  font-weight: bold !important;
+}
+
+.header_cart-notification{
+  color: beige;
+}
+
+.a_carrito{
+  display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+}
+
+.btn {
+   width: 7%;
+   height: 7%;
+}
+
+
+@media (min-width: 768px) {
+  .h2,
+  h2 {
+    font-size: 2.5rem !important;
+  }
+  .textPresen {
+    font-size: 1.5rem;
+}
+  .nav-ul {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .h2,
+  h2 {
+    font-size: 3rem !important;
+  }
+  .textPresen {
+    font-size: 2rem;
+}
+  .footer{
+    display: grid;
+    grid-template-areas: 
+    "contacto contacto redes-sociales redes-sociales"
+    "contacto contacto redes-sociales redes-sociales"
+    "derechos derechos derechos derechos";
+    grid-template-columns: 50% 50%;
+  };
+  .contacto{
+    grid-area: contacto;
+  };
+
+  .redes-sociales{
+    grid-area: redes-sociales;
+  }
+
+  .derechos{
+    grid-area: derechos;
+
+  }
+
+  .footer_ul{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+
+
+h3 {
+  font-family: "lobster", cursive;
+}
+
+.style_list {
+  color: #c7bebe !important;
+}
+
+p {
+  font-family: "Lobster Two", monospace;
+  color: #ad612a !important;
+  font-weight: bolder;
+}
+
+ul {
+  text-align: center;
+}
+
+ul li {
+  display: inline-block;
+  display: margin-right;
+}
+
+ul li a {
+  text-decoration: none;
+  font-family: "lobster", cursive;
+  padding: 0 1em;
+}
+
+.carrito-btn1 {
+  background-image: var();
+}
+
+.textPresen {
+  text-align: center;
+}
+
+.imagen_fond {
+  background-image: url(../Imagenes/pizza_nav.jpg);
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+.row {
+  justify-content: center;
+}
+
+.card2 {
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-border-width: var(--bs-border-width);
+    --bs-card-border-radius: var(--bs-border-radius);
+    display: flex;
+    flex-direction: column;
+    color: var(--bs-body-color);  
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid rgba(255, 255, 255, 0.43);
+    border-radius: var(--bs-card-border-radius);
+    text-align: center;
+    color: #c7bebe;
+    font-family: "Lobster Two", monospace;
+}
+
+.card-title2 {
+  margin-bottom: var(--bs-card-title-spacer-y);
+  color: var(--bs-card-title-color);
+  font-weight: bold;
+}
+
+.p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: bolder;
+}
+.btn2 {
+  --bs-btn-padding-x: 0.75rem;
+  --bs-btn-padding-y: 0.375rem;
+
+
+  
+  --bs-btn-color: var(--bs-body-color);
+  --bs-btn-border-width: var(--bs-border-width);
+  --bs-btn-border-color: transparent;
+  --bs-btn-border-radius: var(--bs-border-radius);
+  display: inline-block;
+  padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+  color: var(--bs-btn-color);
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+  border-radius: var(--bs-btn-border-radius);
+  background-color: #933232;
+}
+
+
+
+.footer {
+  text-align: center;
+  justify-content: center;
+}
+
+.footer_h4 {
+  font-family: "lobster", cursive;
+  color: rgba(211, 48, 48, 0.8117647059);
+}
+
+.footer_a {
+  font-family: "lobster", cursive;
+  color: #c7bebe !important;
+}
+
+
+#carta {
+  margin: 7%;
+  max-width: 30%;
+  justify-content: center;
+}
+
+#imagen_nav {
+  width: 70%;
+  margin: 0 auto;
+}/*# sourceMappingURL=main.css.map */
