@@ -1,8 +1,11 @@
- 
- // Realizar una solicitud para cargar el archivo catalogo.json
+import { addToCart } from "./cart.js";  // Importamos a la funcion que queremos usar.
+
+
+// Realizar una solicitud para cargar el archivo catalogo.json
 fetch('../catalogo.json')
 .then(response => response.json())
 .then(data => showProducts(data))
+
  
 
 function showProducts(data){
@@ -12,17 +15,20 @@ function showProducts(data){
 
     // Iterar a través de los productos y agregarlos a la lista UL
     data.forEach(product => {
+
+      const {image, name, description, price, id} = product
+
         let listItem = document.createElement("div");
         listItem.innerHTML = `
        
         <div class="card2">
 
-        <img src="${product.image}" alt="${product.name}" class="card-img-top">
-        <div class="card-body pizza" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}">
-            <h4 class="card-title2">${product.name}</h4>
-            <p class="card-text p">${product.description}</p>
-            <h5 class="card-title2">Precio: ${product.price}</h5>
-            <button class="makeAnOrder  btn2 btn-primary2" alt="Pizza Muzarella" id="${product.id}">Agregar al carrito</button>  
+        <img src="${image}" alt="${name}" class="card-img-top">
+        <div class="card-body pizza" data-id="${id}" data-name="${name}" data-price="${price}">
+            <h4 class="card-title2">${name}</h4>
+            <p class="card-text p">${description}</p>
+            <h5 class="card-title2">Precio: ${price}</h5>
+            <button class="makeAnOrder  btn2 btn-primary2" alt="Pizza Muzarella" id="${id}">Agregar al carrito</button>  
             </div>  
     </div> 
         `;
@@ -32,52 +38,84 @@ function showProducts(data){
       buyButtons.forEach(btn => {
         btn.addEventListener('click', (e) => addToCart(e,data));
       })
-
     }
     
-    let shoppingCart = [];
-    let chosenProduct = "";
-    let relegatedProduct = "";
-    
+     
 
-    function addToCart(e,data){
-      console.log(data);
-  
-      // El findIndex lo utilizo para saber cual es el indice del producto si es que existe
-      const relegatedProduct = shoppingCart.findIndex(obj => obj.id === parseInt(e.currentTarget.id));
-      console.log(relegatedProduct);
-  
-  
-      if(relegatedProduct != -1){
-        shoppingCart[relegatedProduct].amount++
-        console.log(shoppingCart);
-      }else{
-        chosenProduct = data.find( obj=> obj.id === parseInt(e.currentTarget.id));
-        shoppingCart.push(chosenProduct);
-        console.log(shoppingCart);
-      }
-    }
     
     
 
-    function showCart(shoppingCart) {
-      // Access the UL list where products will be displayed
-      const listProductos = document.getElementById("cartDomm");
-  
-      shoppingCart.forEach((product) => {
-          let cartDom = document.createElement("div");
-          cartDom.innerHTML = `
-              <div class="header_cart-notification">${product.amount}</div>
-              <button class="btn" id="btn_Carrito" src="${product.image}" alt="Botón Carrito"></button>
-          `;
-  
-          // Append the cartDom element to the listaProductos element
-          listProductos.appendChild(cartDom);
-      });
-  }
-  
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  
+/*
+  // Accede al elemento donde se mostrará la notificación y el botón del carrito
+  const cartDomm = document.getElementById("cartDomm");
+
+  // Borra el contenido anterior para evitar duplicados
+  cartDomm.innerHTML = "";
+
+  shoppingCart.forEach((product) => {
+    let cartDom = document.createElement("div");
+    cartDom.classList.add("cart-item"); // Agrega una clase para fines de estilo
+    cartDom.innerHTML = `
+      <div class="header_cart-notification">${product.amount}</div>
+      <button class="btn" id="btn_Carrito" data-id="${product.id}">
+        <img src="${product.image}" alt="Botón Carrito">
+      </button>
+    `;
+
+    // Agrega el elemento cartDom al elemento cartDomm
+    cartDomm.appendChild(cartDom);
+
+    // Agrega un event listener al botón del carrito
+    const cartButton = cartDom.querySelector(".btn");
+    cartButton.addEventListener("click", () => {
+      // Implementa el código para mostrar detalles del artículo u otras acciones
+    });
+  });
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
  /*
     function addToCart(e, data) {
