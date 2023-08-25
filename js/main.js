@@ -2,7 +2,7 @@ import { addToCart,
          showCart
        } from "./cart.js";  // Importamos las funciones que queremos usar y abajo del todo llamamos a la funcion importada
 const cartJson = JSON.parse(localStorage.getItem("cart")) || []; //Traemos de seccion storage
- 
+
 
 // Realizar una solicitud para cargar el archivo catalogo.json
 fetch('../catalogo.json')
@@ -10,7 +10,7 @@ fetch('../catalogo.json')
 .then(data => showProducts(data))
 
 function showProducts(data){
-       // Acceder a la lista UL donde se mostrarán los productos
+    // Acceder a la lista UL donde se mostrarán los productos
        const listaProductos = document.getElementById("carta");
     // Iterar a través de los productos y agregarlos a la lista UL
     data.forEach(product => {
