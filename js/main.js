@@ -1,4 +1,4 @@
-import { addToCart } from "./cart.js";  // Importamos a la funcion que queremos usar.
+import { addToCart } from "./cart.js";  // Importamos a la funcion que queremos usar y abajo del todo llama a la funcion importada
 
 
 // Realizar una solicitud para cargar el archivo catalogo.json
@@ -9,20 +9,14 @@ fetch('../catalogo.json')
  
 
 function showProducts(data){
-
        // Acceder a la lista UL donde se mostrarán los productos
        const listaProductos = document.getElementById("carta");
-
     // Iterar a través de los productos y agregarlos a la lista UL
     data.forEach(product => {
-
       const {image, name, description, price, id} = product
-
         let listItem = document.createElement("div");
         listItem.innerHTML = `
-       
         <div class="card2">
-
         <img src="${image}" alt="${name}" class="card-img-top">
         <div class="card-body pizza" data-id="${id}" data-name="${name}" data-price="${price}">
             <h4 class="card-title2">${name}</h4>
@@ -30,7 +24,7 @@ function showProducts(data){
             <h5 class="card-title2">Precio: ${price}</h5>
             <button class="makeAnOrder  btn2 btn-primary2" alt="Pizza Muzarella" id="${id}">Agregar al carrito</button>  
             </div>  
-    </div> 
+        </div> 
         `;
         listaProductos.appendChild(listItem);
       })
@@ -39,16 +33,47 @@ function showProducts(data){
         btn.addEventListener('click', (e) => addToCart(e,data));
       })
     }
-    
-     
-
-    
-    
+       // Llamamos a la función importada pasando los argumentos necesarios
+       addToCart(e, data); 
+   
 
 
 
+/*
+
+    function showCart(shoppingCart) {
+
+      // Access the UL list where products will be displayed
+      const listProduc = document.getElementById("cartDomm");
+      
+      // Borrar el contenido anterior para evitar duplicados
+     cartDomm.innerHTML = "";
+  
+      shoppingCart.forEach(product => {
+  
+          const {amount, id, imageCart} = product;
+          let cartDom = document.createElement("div");
+          cartDom.classList.add("cart-item"); // Agrega una clase para fines de estilo
+          cartDom.innerHTML = `
+          <div class="header_cart-notification">${amount}</div>
+          <button class="btn" id="btn_Carrito" data-id="${id}">
+            <img src="${imageCart}" alt="Botón Carrito">
+          </button>
+          `;
+            });
+             // Agrega el elemento cartDom al elemento cartDomm
+            listProduc.appendChild(cartDom);
+          
+          // Agrega un event listener al botón del carrito
+          const cartButton = cartDom.querySelector(".btn");
+          cartButton.addEventListener("click", () => {
+          // Implementa el código para mostrar detalles del artículo u otras acciones
+      });
+  
+    };
 
 
+*/
 
 
 
