@@ -1,6 +1,6 @@
 import { addToCart,
-         showCart
-       } from "./cart.js";  // Importamos las funciones que queremos usar y abajo del todo llamamos a la funcion importada
+  showCart
+} from "./cart.js";  // Importamos las funciones que queremos usar y abajo del todo llamamos a la funcion importada
 const cartJson = JSON.parse(localStorage.getItem("cart")) || []; //Traemos de seccion storage
 
 
@@ -10,41 +10,36 @@ fetch('../catalogo.json')
 .then(data => showProducts(data))
 
 function showProducts(data){
-    // Acceder a la lista UL donde se mostrarán los productos
-       const listaProductos = document.getElementById("carta");
-    // Iterar a través de los productos y agregarlos a la lista UL
-    data.forEach(product => {
-      const {image,
-             name,
-             description,
-             price, 
-             id
-            } = product
-        let listItem = document.createElement("div");
-        listItem.innerHTML = `
-        <div class="card2">
-        <img src="${image}" alt="${name}" class="card-img-top">
-        <div class="card-body pizza" data-id="${id}" data-name="${name}" data-price="${price}">
-            <h4 class="card-title2">${name}</h4>
-            <p class="card-text p">${description}</p>
-            <h5 class="card-title2">Precio: ${price}</h5>
-            <button class="makeAnOrder  btn2 btn-primary2" alt="Pizza Muzarella" id="${id}">Agregar al carrito</button>  
-            </div>  
-        </div> 
-        `;
-      listaProductos.appendChild(listItem);
-      })
-      const buyButtons = document.querySelectorAll('.makeAnOrder');
-      buyButtons.forEach(btn => {
-      btn.addEventListener('click', (e) => addToCart(e,data));
-      })
-    }
-    showCart(cartJson);
-  
-
-
-
-
+// Acceder a la lista UL donde se mostrarán los productos
+const listaProductos = document.getElementById("carta");
+// Iterar a través de los productos y agregarlos a la lista UL
+data.forEach(product => {
+const {image,
+      name,
+      description,
+      price, 
+      id
+     } = product
+ let listItem = document.createElement("div");
+ listItem.innerHTML = `
+ <div class="card2">
+ <img src="${image}" alt="${name}" class="card-img-top">
+ <div class="card-body pizza" data-id="${id}" data-name="${name}" data-price="${price}">
+     <h4 class="card-title2">${name}</h4>
+     <p class="card-text p">${description}</p>
+     <h5 class="card-title2">Precio: ${price}</h5>
+     <button class="makeAnOrder  btn2 btn-primary2" alt="Pizza Muzarella" id="${id}">Agregar al carrito</button>  
+     </div>  
+ </div> 
+ `;
+listaProductos.appendChild(listItem);
+})
+const buyButtons = document.querySelectorAll('.makeAnOrder');
+buyButtons.forEach(btn => {
+btn.addEventListener('click', (e) => addToCart(e,data));
+})
+}
+showCart(cartJson);
 
 
 

@@ -1,7 +1,7 @@
-let shoppingCart = JSON.parse(sessionStorage.getItem("cart")) || [];
+let shoppingCart = JSON.parse(localStorage.getItem("cart")) || [];
 
 let chosenProduct = "";
-let relegatedProduct = "";
+
 
 //Declaramos la exportacion del codigo y de la funcion para su funcionamiento.
 export const addToCart = (e,data) =>{
@@ -10,7 +10,6 @@ export const addToCart = (e,data) =>{
   // El findIndex lo utilizo para saber cual es el indice del producto si es que existe
   const relegatedProduct = shoppingCart.findIndex(obj => obj.id === parseInt(e.currentTarget.id));
   console.log(relegatedProduct);
-
 
   if(relegatedProduct != -1){
     shoppingCart[relegatedProduct].amount++
@@ -27,6 +26,39 @@ export const addToCart = (e,data) =>{
 
 
 export const showCart = (shoppingCart) => {
+
+shoppingCart.forEach(product => {
+
+const {amount} = product;
+
+let totalCantidad = 0;
+for (const item of shoppingCart) {
+    totalCantidad += item.amount;
+  }
+  console.log(`Al comienzo del carrito ${totalCantidad}`);
+
+  const listProduc = document.getElementById("domIngres");
+  domIngres.innerHTML = ""; 
+  let domIngreso = document.createElement("p");
+  domIngreso.innerHTML = `<p>${totalCantidad}</p>`;
+  listProduc.appendChild(domIngreso);
+});
+      // Agrega un event listener al botón del carrito
+      const cartButton = document.getElementById("btn_Carrito");;
+      cartButton.addEventListener("click", (shoppingCart) => {
+      // Implementa el código para mostrar detalles del artículo u otras acciones
+
+      console.log("llegaste hasta lo ultimo")
+  });
+}
+
+
+
+
+
+
+
+/*
 
   //Acceder a la lista de UL donde se mostrarán los productos
   const listProduc = document.getElementById("cartDomm");
@@ -50,16 +82,6 @@ export const showCart = (shoppingCart) => {
         
          // Agrega el elemento cartDom al elemento cartDomm
         listProduc.appendChild(cartDom);
-      
-      // Agrega un event listener al botón del carrito
-      const cartButton = cartDom.querySelector(".btn");
-      cartButton.addEventListener("click", () => {
-      // Implementa el código para mostrar detalles del artículo u otras acciones
-  });
-});
-};
-
-
-
-
-
+      //);
+// };
+  */   
