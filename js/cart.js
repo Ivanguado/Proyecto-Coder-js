@@ -44,7 +44,7 @@ for (const item of shoppingCart) {
   listProduc.appendChild(domIngreso);
 });
       // Agrega un event listener al botón del carrito
-      const cartButton = document.getElementById("btn_Carrito");;
+      const cartButton = document.Getelementsbyclassname("btn_Carrito");  
       cartButton.addEventListener("click", (shoppingCart) => {
       // Implementa el código para mostrar detalles del artículo u otras acciones
 
