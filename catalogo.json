@@ -16,44 +16,7 @@
 		"price": 1200,
         "image": "Imagenes/pizza_prueba.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
-	},
-	{
-		"id": 3,
-		"name": "MUZZARELLA",
-		"amount": 1,
-        "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
-        "image": "Imagenes/pizza_prueba.jpg",
-		"imageCart": "Imagenes/carrito-de-compras.png"
-	},
-	{
-		"id": 4,
-		"name": "Otra",
-		"amount": 1,
-        "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
-        "image": "Imagenes/pizza_prueba.jpg",
-		"imageCart": "Imagenes/carrito-de-compras.png"
-	},
-	{
-		"id": 5,
-		"name": "MUZZARELLA",
-		"amount": 1,
-        "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
-        "image": "Imagenes/pizza_prueba.jpg",
-		"imageCart": "Imagenes/carrito-de-compras.png"
-	},
-	{
-		"id": 6,
-		"name": "Otra",
-		"amount": 1,
-        "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
-        "image": "Imagenes/pizza_prueba.jpg",
-		"imageCart": "Imagenes/carrito-de-compras.png"
 	}
-	
 	
 ]
 
