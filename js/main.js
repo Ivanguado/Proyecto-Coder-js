@@ -7,30 +7,10 @@ const cartJson = JSON.parse(localStorage.getItem("cart")) || []; //Traemos de se
 // Realizar una solicitud para cargar el archivo catalogo.json
 fetch('../catalogo.json')
 .then(response => response.json()) 
-.then(catalog => catalogJson(catalog))
-//.then(data => showProducts(data))  catalog
+.then(data => showProducts(data)) 
 
 
-
-function catalogJson(catalog){
-
-let catalogPizza = catalog.filter((obj) => obj.category === "pizza");
-let catalogBurger = catalog.filter((obj) => obj.category === "empanadas");
-let catalogDrinks = catalog.filter((obj) => obj.category === "burger");
-let catalogEmpanadas = catalog.filter((obj) => obj.category === "sandwich");
-let catalogSalads = catalog.filter((obj) => obj.category === "salad");
-let catalogSandwiches = catalog.filter((obj) => obj.category === "drinks");                                     
-
-let catalogGral = [];
- catalogGral.push(catalogBurger, catalogDrinks, catalogEmpanadas, catalogPizza, catalogSalads, catalogSandwiches);
-
- SelectionCategories(catalogGral)
-}
-
-function SelectionCategories(catalogGral){
-  for (const data of catalogGral) {
 function showProducts(data){
-
 // Acceder a la lista UL donde se mostrarán los productos
 const listaProductos = document.getElementById(`cartPizza`);
 // Iterar a través de los productos y agregarlos a la lista UL
@@ -59,8 +39,8 @@ const buyButtons = document.querySelectorAll('.makeAnOrder');
 buyButtons.forEach(btn => {
 btn.addEventListener('click', (e) => addToCart(e,data));
 })
-}} // Final de la funcion showProduct y final del bucle for
-}// Final de la funcion selectionCategories
+}
+
 
 showCart(cartJson);
 
@@ -77,13 +57,21 @@ showCart(cartJson);
 
 
 
+/*
+function catalogJson(catalog){
+let catalogPizza = catalog.filter((obj) => obj.category === "pizza");
+let catalogBurger = catalog.filter((obj) => obj.category === "empanadas");
+let catalogDrinks = catalog.filter((obj) => obj.category === "burger");
+let catalogEmpanadas = catalog.filter((obj) => obj.category === "sandwich");
+let catalogSalads = catalog.filter((obj) => obj.category === "salad");
+let catalogSandwiches = catalog.filter((obj) => obj.category === "drinks");                                     
 
+let catalogGral = [];
+ catalogGral.push(catalogBurger, catalogDrinks, catalogEmpanadas, catalogPizza, catalogSalads, catalogSandwiches);
+ SelectionCategories(catalogGral)
+}
+*/
 
-
-
-
-    
-  
 /*
   // Accede al elemento donde se mostrará la notificación y el botón del carrito
   const cartDomm = document.getElementById("cartDomm");
