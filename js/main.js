@@ -1,24 +1,28 @@
-import { addToCart,
-  showCart
+import { addToCart, showCart
 } from "./cart.js";  // Importamos las funciones que queremos usar y abajo del todo llamamos a la funcion importada
 const cartJson = JSON.parse(localStorage.getItem("cart")) || []; //Traemos de seccion storage
 
 
-// Realizar una solicitud para cargar el archivo catalogo.json
-fetch('../catalogo.json')
+
+// Realizar una solicitud para cargar los archivos json
+fetch('../folders-JSON/pizza-catalogue.json')
 .then(response => response.json()) 
 .then(data => showProducts(data)) 
 
 
 function showProducts(data){
-// Acceder a la lista UL donde se mostrarán los productos
+console.log(data[0].category);
+
+  // Acceder a la lista UL donde se mostrarán los productos
 const listaProductos = document.getElementById(`cartPizza`);
+
 // Iterar a través de los productos y agregarlos a la lista UL
 data.forEach(product => {
+
 const {image,
       name,
       description,
-      price, 
+      price,
       id
      } = product
  let listItem = document.createElement("div");
@@ -35,12 +39,12 @@ const {image,
  `;
 listaProductos.appendChild(listItem);
 })
+
 const buyButtons = document.querySelectorAll('.makeAnOrder');
 buyButtons.forEach(btn => {
 btn.addEventListener('click', (e) => addToCart(e,data));
 })
 }
-
 
 showCart(cartJson);
 
@@ -58,17 +62,7 @@ showCart(cartJson);
 
 
 /*
-function catalogJson(catalog){
-let catalogPizza = catalog.filter((obj) => obj.category === "pizza");
-let catalogBurger = catalog.filter((obj) => obj.category === "empanadas");
-let catalogDrinks = catalog.filter((obj) => obj.category === "burger");
-let catalogEmpanadas = catalog.filter((obj) => obj.category === "sandwich");
-let catalogSalads = catalog.filter((obj) => obj.category === "salad");
-let catalogSandwiches = catalog.filter((obj) => obj.category === "drinks");                                     
 
-let catalogGral = [];
- catalogGral.push(catalogBurger, catalogDrinks, catalogEmpanadas, catalogPizza, catalogSalads, catalogSandwiches);
- SelectionCategories(catalogGral)
 }
 */
 

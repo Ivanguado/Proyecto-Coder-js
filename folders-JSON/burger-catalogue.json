@@ -1,0 +1,59 @@
+[
+    
+	{
+		"id": 1,
+		"name": "CLASSIC",
+		"amount": 1,
+        "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
+		"price": 1200,
+        "image": "Images/pizza_test.jpg",
+		"imageCart": "Images/carrito-de-compras.png"
+	},
+	{
+		"id": 2,
+		"name": "BBQ",
+		"amount": 1,
+        "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
+		"price": 1200,
+        "image": "Images/pizza_test.jpg",
+		"imageCart": "Imagenes/carrito-de-compras.png"
+	},
+	{ 
+		"id": 3,
+		"name": "BBQ RANCH",
+		"amount": 1,
+        "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
+		"price": 1200,
+        "image": "Images/pizza_test.jpg",
+		"imageCart": "Imagenes/carrito-de-compras.png"
+	},
+	{
+		"id": 4,
+		"name": "VEGETARIAN",
+		"amount": 1,
+        "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
+		"price": 1200,
+        "image": "Images/pizza_test.jpg",
+		"imageCart": "Imagenes/carrito-de-compras.png"
+	},
+	{
+		"id": 5,
+		"name": "SPICY JALAPENO",
+		"amount": 1,
+        "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
+		"price": 1200,
+        "image": "Images/pizza_test.jpg",
+		"imageCart": "Imagenes/carrito-de-compras.png"
+	},
+	{
+		"id": 6,
+		"name": "MEDITERRANEA",
+		"amount": 1,
+        "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
+		"price": 1200,
+        "image": "Images/pizza_test.jpg",
+		"imageCart": "Imagenes/carrito-de-compras.png"
+	}
+	
+	
+]

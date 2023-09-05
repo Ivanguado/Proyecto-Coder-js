@@ -212,3 +212,9 @@ ul li a {
   width: 70%;
   margin: 0 auto;
 }/*# sourceMappingURL=main.css.map */
+
+
+.custom-title {
+  background-color: #933232;
+  color: aqua;
+}

@@ -1,8 +1,7 @@
 [
-    
 	{
-		"category": "pizza",
 		"id": 1,
+		"category": "pizza",
 		"name": "MUZZARELLA",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
@@ -11,9 +10,9 @@
 		"imageCart": "Images/carrito-de-compras.png"
 	},
 	{
-		"category": "pizza",
 		"id": 2,
-		"name": "Otra",
+		"category": "pizza",
+		"name": "PALMITOS",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
 		"price": 1200,
@@ -21,9 +20,9 @@
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
 	{ 
-		"category": "drinks",
 		"id": 3,
-		"name": "SODA",
+		"category": "pizza",
+		"name": "SPECIAL",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
 		"price": 1200,
@@ -31,9 +30,9 @@
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
 	{
-		"category": "drinks",
 		"id": 4,
-		"name": "VINO",
+		"category": "pizza",
+		"name": "RICOTA",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
 		"price": 1200,
@@ -41,9 +40,9 @@
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
 	{
-		"category": "drinks",
 		"id": 5,
-		"name": "FLAVORED WATER",
+		"category": "pizza",
+		"name": "ROQUEFORT",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
 		"price": 1200,
@@ -51,16 +50,14 @@
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
 	{
-		"category": "drinks",
 		"id": 6,
-		"name": "SODA",
+		"category": "pizza",
+		"name": "FOUR CHEESES",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
 		"price": 1200,
         "image": "Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	}
-	
-	
 ]
 

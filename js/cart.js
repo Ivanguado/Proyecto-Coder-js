@@ -5,7 +5,7 @@ let chosenProduct = "";
 
 //Declaramos la exportacion del codigo y de la funcion para su funcionamiento.
 export const addToCart = (e,data) =>{
-  console.log(data);
+  console.log("Estoy en la funcion exportada addToCard");
 
   // El findIndex lo utilizo para saber cual es el indice del producto si es que existe
   const relegatedProduct = shoppingCart.findIndex(obj => obj.id === parseInt(e.currentTarget.id));
@@ -19,6 +19,32 @@ export const addToCart = (e,data) =>{
     shoppingCart.push(chosenProduct);
     console.log(shoppingCart);
   }
+
+  ///////////////////////////////////////////////////////////////////
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    customClass: {
+      // Agregar una clase CSS personalizada al Toast
+      
+      title: 'custom-title',
+    },
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer);
+      toast.addEventListener('mouseleave', Swal.resumeTimer);
+    },
+  });
+  
+  Toast.fire({
+    icon: 'success',
+    title: 'Product Select',
+  });
+
+  ////////////////////////////////////////////////////////////////////
   
   localStorage.setItem("cart", JSON.stringify(shoppingCart))
   showCart(shoppingCart);
@@ -26,9 +52,7 @@ export const addToCart = (e,data) =>{
 
 
 export const showCart = (shoppingCart) => {
-
 shoppingCart.forEach(product => {
-
 const {amount} = product;
 
 let totalCantidad = 0;
@@ -36,7 +60,6 @@ for (const item of shoppingCart) {
     totalCantidad += item.amount;
   }
   console.log(`Al comienzo del carrito ${totalCantidad}`);
-
   const listProduc = document.getElementById("domIngres");
   domIngres.innerHTML = ""; 
   let domIngreso = document.createElement("p");
