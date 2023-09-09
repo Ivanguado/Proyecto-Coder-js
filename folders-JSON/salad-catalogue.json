@@ -5,8 +5,8 @@
 		"name": "CESAR",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
-        "image": "Images/pizza_test.jpg",
+		"price": 1100,
+        "image": "../Images/pizza_test.jpg",
 		"imageCart": "Images/carrito-de-compras.png"
 	},
 	{
@@ -14,8 +14,8 @@
 		"name": "CAPRESE",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
-        "image": "Images/pizza_test.jpg",
+		"price": 1150,
+        "image": "../Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
 	{ 
@@ -23,8 +23,8 @@
 		"name": "ATUN",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
-        "image": "Images/pizza_test.jpg",
+		"price": 1350,
+        "image": "../Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
 	{
@@ -32,8 +32,8 @@
 		"name": "PRIMAVERA",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
-        "image": "Images/pizza_test.jpg",
+		"price": 1050,
+        "image": "../Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
 	{
@@ -42,7 +42,7 @@
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
 		"price": 1200,
-        "image": "Images/pizza_test.jpg",
+		"image": "../Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
 	{
@@ -50,10 +50,8 @@
 		"name": "GREEK",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
-        "image": "Images/pizza_test.jpg",
+		"price": 1100,
+        "image": "../Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
-	}
-	
-	
+	}	
 ]

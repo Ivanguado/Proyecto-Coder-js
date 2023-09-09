@@ -5,7 +5,7 @@
 		"name": "MUZZARELLA",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
+		"price": 1500,
         "image": "Images/pizza_test.jpg",
 		"imageCart": "Images/carrito-de-compras.png"
 	},
@@ -15,7 +15,7 @@
 		"name": "PALMITOS",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
+		"price": 1700,
         "image": "Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
@@ -25,7 +25,7 @@
 		"name": "SPECIAL",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
+		"price": 1600,
         "image": "Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
@@ -35,7 +35,7 @@
 		"name": "RICOTA",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
+		"price": 1850,
         "image": "Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
@@ -45,7 +45,7 @@
 		"name": "ROQUEFORT",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
+		"price": 2000,
         "image": "Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
@@ -55,7 +55,7 @@
 		"name": "FOUR CHEESES",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
+		"price": 1750,
         "image": "Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	}

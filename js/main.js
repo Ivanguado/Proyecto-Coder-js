@@ -1,20 +1,33 @@
-import { addToCart, showCart
-} from "./cart.js";  // Importamos las funciones que queremos usar y abajo del todo llamamos a la funcion importada
+// Importamos las funciones que queremos usar y abajo del todo llamamos a la funcion importada
+import { addToCart, showCart } from "./cart.js"; 
 const cartJson = JSON.parse(localStorage.getItem("cart")) || []; //Traemos de seccion storage
 
+const rutas = {
+	pizza: "./folders-JSON/pizza-catalogue.json",
+	burger: "../folders-JSON/burger-catalogue.json",
+	empanadas: "../folders-JSON/empanadas-catalogue.json",
+	salads: "../folders-JSON/salad-catalogue.json",
+	drinks: "../folders-JSON/drinks-catalogue.json",
+	sandwiches: "../folders-JSON/sandwiches-catalogue.json",
+};
 
+let path = "pizza";
+let isPizza = window.location.pathname.includes("index");
+if (!isPizza) {
+	path = window.location.pathname.split("/")[2].split(".")[0];
+}
 
 // Realizar una solicitud para cargar los archivos json
-fetch('../folders-JSON/pizza-catalogue.json')
-.then(response => response.json()) 
-.then(data => showProducts(data)) 
-
+fetch(rutas[path])
+	.then((response) => response.json())
+	.then((data) => {
+		showProducts(data);
+	});
 
 function showProducts(data){
-console.log(data[0].category);
-
+  console.log(path);
   // Acceder a la lista UL donde se mostrarán los productos
-const listaProductos = document.getElementById(`cartPizza`);
+const listaProductos = document.getElementById(`cartGral`);
 
 // Iterar a través de los productos y agregarlos a la lista UL
 data.forEach(product => {
@@ -38,15 +51,48 @@ const {image,
  </div> 
  `;
 listaProductos.appendChild(listItem);
-})
+    })
 
 const buyButtons = document.querySelectorAll('.makeAnOrder');
 buyButtons.forEach(btn => {
 btn.addEventListener('click', (e) => addToCart(e,data));
+
 })
 }
 
+
 showCart(cartJson);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -90,6 +136,7 @@ showCart(cartJson);
     const cartButton = cartDom.querySelector(".btn");
     cartButton.addEventListener("click", () => {
       // Implementa el código para mostrar detalles del artículo u otras acciones
+      
     });
   });
 }

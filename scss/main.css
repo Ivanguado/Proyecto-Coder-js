@@ -214,7 +214,20 @@ ul li a {
 }/*# sourceMappingURL=main.css.map */
 
 
-.custom-title {
-  background-color: #933232;
-  color: aqua;
+
+/* Personaliza la tarjeta de SweetAlert2 */
+.custom-swal-container {
+  background-image: url('../Images/pizza_img.jpg')!important; /* Ruta a tu imagen de fondo */
+  background-size: cover!important; /* Ajusta el tamaño de la imagen de fondo según el contenedor */
+  color: #fff!important; /* Cambia el color del texto */
 }
+
+.custom-swal-title {
+  font-size: 24px!important; /* Cambia el tamaño del título */
+  font-weight: bold!important; /* Cambia el peso de la fuente del título */
+}
+
+.custom-swal-icon {
+  font-size: 48px!important; /* Cambia el tamaño del icono */
+}
+

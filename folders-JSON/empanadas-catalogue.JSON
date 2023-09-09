@@ -5,8 +5,8 @@
 		"name": "MEAT",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
-        "image": "Images/pizza_test.jpg",
+		"price": 1800,
+        "image": "../Images/pizza_test.jpg",
 		"imageCart": "Images/carrito-de-compras.png"
 	},
 	{
@@ -14,8 +14,8 @@
 		"name": "HAM AND CHEESE",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
-        "image": "Images/pizza_test.jpg",
+		"price": 1800,
+        "image": "../Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
 	{ 
@@ -23,17 +23,17 @@
 		"name": "HUMITA",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
-        "image": "Images/pizza_test.jpg",
+		"price": 1700,
+        "image": "../Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
 	{
 		"id": 4,
 		"name": "VEGETABLES",
-		"amount": 1,
+		"amount": 1600,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
 		"price": 1200,
-        "image": "Images/pizza_test.jpg",
+        "image": "../Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
 	{
@@ -41,8 +41,8 @@
 		"name": "JAMON AND ROQUEFORT",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
-        "image": "Images/pizza_test.jpg",
+		"price": 1900,
+        "image": "../Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
 	{
@@ -50,8 +50,8 @@
 		"name": "CHICKEN",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
-		"price": 1200,
-        "image": "Images/pizza_test.jpg",
+		"price": 1700,
+        "image": "../Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	}
 	
