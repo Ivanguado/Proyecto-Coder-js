@@ -31,7 +31,6 @@ const listaProductos = document.getElementById(`cartGral`);
 
 // Iterar a través de los productos y agregarlos a la lista UL
 data.forEach(product => {
-
 const {image,
       name,
       description,
@@ -40,7 +39,6 @@ const {image,
      } = product
  let listItem = document.createElement("div");
  listItem.innerHTML = `
- <div class="card2">
  <img src="${image}" alt="${name}" class="card-img-top">
  <div class="card-body pizza" data-id="${id}" data-name="${name}" data-price="${price}">
      <h4 class="card-title2">${name}</h4>
@@ -1804,4 +1802,5 @@ function enviarMensajeWhatsApp() {
   // Construye el enlace de WhatsApp
   var url = "https://api.whatsapp.com/send?phone=" + numeroDestinatario + "&text=" + encodeURIComponent(mensaje); 
   // Abre una nueva ventana o pestaña con el enlace de WhatsApp
-  window.open(url, '_blank');  */
+  window.open(url, '_blank');  
+}*/

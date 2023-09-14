@@ -7,7 +7,8 @@
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
 		"price": 1100,
         "image": "../Images/pizza_test.jpg",
-		"imageCart": "Images/carrito-de-compras.png"
+		"imageCart": "Images/carrito-de-compras.png",
+		"total": 0
 	},
 	{
 		"id": 2,
@@ -16,7 +17,8 @@
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
 		"price": 1150,
         "image": "../Images/pizza_test.jpg",
-		"imageCart": "Imagenes/carrito-de-compras.png"
+		"imageCart": "Imagenes/carrito-de-compras.png",
+		"total": 0
 	},
 	{ 
 		"id": 3,
@@ -25,7 +27,8 @@
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
 		"price": 1350,
         "image": "../Images/pizza_test.jpg",
-		"imageCart": "Imagenes/carrito-de-compras.png"
+		"imageCart": "Imagenes/carrito-de-compras.png",
+		"total": 0
 	},
 	{
 		"id": 4,
@@ -34,7 +37,8 @@
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
 		"price": 1050,
         "image": "../Images/pizza_test.jpg",
-		"imageCart": "Imagenes/carrito-de-compras.png"
+		"imageCart": "Imagenes/carrito-de-compras.png",
+		"total": 0
 	},
 	{
 		"id": 5,
@@ -43,7 +47,8 @@
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
 		"price": 1200,
 		"image": "../Images/pizza_test.jpg",
-		"imageCart": "Imagenes/carrito-de-compras.png"
+		"imageCart": "Imagenes/carrito-de-compras.png",
+		"total": 0
 	},
 	{
 		"id": 6,
@@ -52,6 +57,7 @@
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
 		"price": 1100,
         "image": "../Images/pizza_test.jpg",
-		"imageCart": "Imagenes/carrito-de-compras.png"
+		"imageCart": "Imagenes/carrito-de-compras.png",
+		"total": 0
 	}	
 ]

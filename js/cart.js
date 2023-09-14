@@ -1,6 +1,9 @@
+
 let shoppingCart = JSON.parse(localStorage.getItem("cart")) || [];
 
+let shoppingContainer = "";
 let chosenProduct = "";
+let priceTotal = 0;
 
 //Declaramos la exportacion del codigo y de la funcion para su funcionamiento.
 export const addToCart = (e,data) =>{
@@ -71,76 +74,102 @@ for (const item of shoppingCart) {
       // Agrega un event listener al botón del carrito
       const cartButton = document.getElementById("btn_Carrito");
       cartButton.addEventListener("click", (shoppingCart) => {
-
-
+      
       // Implementa el código para mostrar detalles del artículo u otras acciones
       console.log("LLegasta al container del carrito")
-      let shoppingContainer = JSON.parse(localStorage.getItem("cart")) 
-      console.log(shoppingContainer);
+      shoppingContainer = JSON.parse(localStorage.getItem("cart")) 
+
       
+          
+      const containerFloatCreators = document.getElementById("container_float--cart");
+
+      let containerFloat = document.createElement("div");
+      containerFloat.innerHTML = `
+      <div >  
+      <h1 class="container__h1">~ PRODUCTS IN CART ~</h1>  
+      <div id = "container-cart">
+      </div>
+      <div class="container__btn">
+      <button class="btn2 btn-primary2"><a href="Products/order.html" class="container_btn-style">Continue Order</a></button>
+      </div>
+      </div>`
+    containerFloatCreators.appendChild(containerFloat);
+    
+
+    shoppingContainer.forEach(product => {
+      product.total = product.amount * product.price;
+    })
+    
+    console.log(shoppingContainer);
+    
+    priceTotal = shoppingContainer.reduce((total, product) => {
+      return total + (product.price * product.amount);
+    },0)                
+    console.log(`Precio total de la compra ${priceTotal}`);
+      
+    
+      
+
         // Acceder a la lista UL donde se mostrarán los productos
       const containerCartCreator = document.getElementById("container-cart");
     
-      //Declaramos variables
-      let totalQuantityOfProduct = 0;
-      let categoriesProducts = [];
-      let quantityOfProduct = 0;
-      let priceProducts = [];
-      
-
-      let categoriesBoolean = shoppingContainer.map(obj => obj.category);
-      console.log(`Categorias Boolean ${categoriesBoolean}`);
-
-      if(categoriesBoolean =! false){
-        categoriesProducts = shoppingContainer.filter(obj => obj.category)
-        console.log(`Categorias en el array ${categoriesProducts}`);
-        
-        if(quantityOfProduct > 0){
-          for(const i of shoppingContainer
-            
-            
-            
-            ){
-            if(i >= 0 && i < amount.length){
-            totalQuantityOfProduct += amount[i];
-            }
-            console.error("Invalid", i); 
-          }
-          console.log(`El total quantitativo es ${totalQuantityOfProduct}`);
-        }
-        console.log(`El total quantitativo es ${totalQuantityOfProduct}`);
-
-        priceProducts = shoppingContainer.filter(obj => obj.price > 0);
-        console.log(`Los precios de los productos ${priceProducts}`);
-      }
-
-     
-     
-      
-      
-
       shoppingContainer.forEach(obj => {
       const {
         amount,
         price,
+        image,
+        name,
+        total
       } = obj;
         
+      
+
+
         console.log(obj.amount)
       let containerCart = document.createElement("div");
+      
+        console.log("Mitad de proceso" )
       containerCart.innerHTML = `
-      <div>Aparece aca</div>
-      <div class="header_cart-notification">no HAY NADA</div>
-      <button class="btn" id="btn_Carrito" data-id="">
-        <img src="" alt="Botón Carrito">
-      </button>
+      <img src="${image}" alt="${name}" class="card-img-top cart__img-cart">
+      <div class="card-body pizza cart__img-cart" >
+          <h2 class="card__title-cart">${name}</h2>
+          <p class="cart__subtitle-cart">Price <a class="card__number-cart" >${price}</a></p>
+          <p class="cart__subtitle-cart">Ordered quantity: <a class="card__number-cart" >${amount}</a></p>
+          <p class="cart__subtitle-cart">Total product: <a class="card__number-cart" >${total}</a></p>
+          </div>  
+      </div> 
       `;
+     
     containerCartCreator.appendChild(containerCart);
+    
 
-  })  // Fin del forEach del shoppingContainer
-  }) // Fin de la cart button
+  })
+  order(shoppingContainer)  
+  })
   } // Fin de la funcion
   
+function order (shoppingContainer) {
+  let formOrder = document.getElementById("order_btn-finaly");
+  formOrder.addEventListener("click", (shoppingContainer) => {
+    
+    console.log(shoppingContainer);
+    console.log(priceTotal);
 
+    const name = document.getElementById('order_name').value;
+    const userName = document.getElementById('user_name').value;
+    const phoneNumber = document.getElementById('phone_number').value;
+    const adress = document.getElementById('adress').value;
+    const adressNumber = document.getElementById('adressNumber').value;
+    const paymentMethod = document.getElementById('payment_method').value;
+    const mensaje = "Aca estamos escribiendo el mensaje";
+    console.log("llegamos al final del proyecto")
+  // Construye el enlace de WhatsApp
+    const url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(mensaje); 
+  // Abre una nueva ventana o pestaña con el enlace de WhatsApp
+    window.open(url, '_blank');
+ 
+  });
+};
 
 
 
@@ -180,4 +209,19 @@ for (const item of shoppingCart) {
         listProduc.appendChild(cartDom);
       //);
 // };
-  */   
+*/
+
+
+
+
+/*
+      <div class="card"  style="width: 18rem;">
+      <img src="${image}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h2 class="card-title">${name}</h2>
+        <h3 class="card-title">${price}</h3>
+        <h3 class="card-text">Cantidad${amount}</h3>
+        <h3 class="card-text">Cantidad${total}</h3>
+      </div>
+    </div>
+*/

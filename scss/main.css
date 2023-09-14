@@ -17,6 +17,51 @@ h2 {
   font-weight: bold !important;
 }
 
+.container__h1{
+  font-weight: bold;
+  color: var(--bs-card-title-color);
+  font-size: calc(1.275rem + .3vw);
+  color: #c7bebe;
+  font-family: "Lobster Two", monospace;
+  text-align: center;
+  font-size: 30px!important;
+}
+
+.cart__img-cart{
+  width: 160px!important;
+  height: auto;
+  justify-content: center!important;
+}
+
+.card__title-cart{
+  font-weight: bold;
+  color: var(--bs-card-title-color);
+  font-size: calc(1.275rem + .3vw);
+  color: #c7bebe;
+  font-family: "Lobster Two", monospace;
+  text-align: center;
+  font-size: 20px!important;
+}
+
+.cart__subtitle-cart{
+  font-weight: bold;
+  font-family: "Lobster Two", monospace;
+  color: #ad612a !important;
+  font-size: 20px!important;
+  text-align: left;
+}
+
+.card__number-cart{
+  font-weight: bold;
+  color: var(--bs-card-title-color);
+  font-size: calc(1.275rem + .3vw);
+  color: #c7bebe!important;
+  font-family: "Lobster Two", monospace;
+  text-align: center;
+  font-size: 20px!important;
+  text-decoration: none;
+}
+
 .header_cart-notification{
   color: beige;
 }
@@ -33,10 +78,21 @@ h2 {
    height: 7%;
 }
 
+#btn__continue-order{
+  font-family: inherit;
+}
+
 .cart__button--features{
   width: 150%;
   height: auto;
 }
+
+.container__btn{
+  display: flex;
+  justify-content: center!important;
+  margin-bottom: 5%;
+}
+
 
 @media (min-width: 768px) {
   .h2,
@@ -92,11 +148,53 @@ h3 {
   font-family: "lobster", cursive;
 }
 
+.col-12 {
+  display: flex;
+  justify-content: center;
+  margin-block: 5%;
+}
+
 .style_list {
   color: #c7bebe !important;
 }
 
+.container_btn-style{
+  color: #c7bebe !important;
+  text-decoration: none;
+  font-family: "Lobster Two", monospace;
+  font-weight: bold;
+}
+
+.form-control{
+  background-color: #9e6868e8 !important;
+}
+
+.form-select{
+  background-color:  #9e6868e8 !important;
+}
+
+#order_btn-finaly {
+  --bs-btn-padding-x: 4.75rem!important;
+  --bs-btn-padding-y: 1.375rem!important;
+  --bs-btn-font-family: ;
+  --bs-btn-font-size: 1rem!important;
+  --bs-btn-font-weight: 40!important;
+  --bs-btn-line-height: 0.5px!important;
+  --bs-btn-bg: #ad4f04;
+  --bs-btn-border-color: #ad4f04;
+  font-family: "Lobster Two", monospace;
+  color: #ffffff;
+  justify-content: center;
+  --bs-btn-hover-bg: rgb(52, 138, 26);
+}
+
 p {
+  font-family: "Lobster Two", monospace;
+  color: #ad612a !important;
+  font-weight: bolder;
+}
+
+.dates_form{
   font-family: "Lobster Two", monospace;
   color: #ad612a !important;
   font-weight: bolder;
@@ -201,6 +299,10 @@ ul li a {
   color: #c7bebe !important;
 }
 
+#container-cart{
+  display: flex;
+  flex-wrap: wrap;
+}
 
 #carta {
   margin: 7%;
@@ -213,7 +315,9 @@ ul li a {
   margin: 0 auto;
 }/*# sourceMappingURL=main.css.map */
 
-
+#center{
+  justify-content: center;
+}
 
 /* Personaliza la tarjeta de SweetAlert2 */
 .custom-swal-container {
@@ -230,4 +334,6 @@ ul li a {
 .custom-swal-icon {
   font-size: 48px!important; /* Cambia el tamaño del icono */
 }
+
+
 
