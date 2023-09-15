@@ -148,6 +148,7 @@ for (const item of shoppingCart) {
   })
   } // Fin de la funcion
   
+  /*
 function order (shoppingContainer) {
   let formOrder = document.getElementById("order_btn-finaly");
   formOrder.addEventListener("click", (shoppingContainer) => {
@@ -170,6 +171,8 @@ function order (shoppingContainer) {
  
   });
 };
+
+*/
 
 
 
