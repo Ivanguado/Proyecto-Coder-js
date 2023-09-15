@@ -1,7 +1,7 @@
 [
     
 	{
-		"id": 1,
+		"id": 31,
 		"name": "BEER",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
@@ -10,7 +10,7 @@
 		"imageCart": "Images/carrito-de-compras.png"
 	},
 	{
-		"id": 2,
+		"id": 32,
 		"name": "WATER",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
@@ -19,7 +19,7 @@
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
 	{ 
-		"id": 3,
+		"id": 33,
 		"name": "WINE",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
@@ -29,7 +29,7 @@
 		"total": 0
 	},
 	{
-		"id": 4,
+		"id": 34,
 		"name": "GASEOUS WATER",
 		"amount": 650,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
@@ -39,7 +39,7 @@
 		"total": 0
 	},
 	{
-		"id": 5,
+		"id": 35,
 		"name": "AERATED WATER",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
@@ -49,7 +49,7 @@
 		"total": 0
 	},
 	{
-		"id": 6,
+		"id": 36,
 		"name": "FLAVOURED WATER",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",

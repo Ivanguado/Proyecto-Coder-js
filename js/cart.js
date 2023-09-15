@@ -20,7 +20,7 @@ export const addToCart = (e,data) =>{
     shoppingCart.push(chosenProduct);
   }
 
-  /////////////////////////////////////////////////////////
+  
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -45,7 +45,7 @@ export const addToCart = (e,data) =>{
     icon: 'success',
     title: 'Product Select',
   });
-
+  
   ////////////////////////////////////////////////////////////////////
   
   localStorage.setItem("cart", JSON.stringify(shoppingCart))
@@ -82,6 +82,7 @@ export const showCart = (shoppingCart) => {
     // ! Creación de Container en el index ! // 
   if(containerFloatCreators){
     let containerFloat = document.createElement("div");
+    containerFloat.innerHTML = "";
     containerFloat.innerHTML = `
       <div >  
       <h1 class="container__h1">~ PRODUCTS IN CART ~</h1>  
@@ -96,6 +97,7 @@ export const showCart = (shoppingCart) => {
 
               // ! Creación de Container en el sand, salad, empa, burguer, drinks ! //             
               let containerFloat2 = document.createElement("div");
+              containerFloat2.innerHTML = "";
               containerFloat2.innerHTML = `
               <div >  
               <h1 class="container__h1">~ PRODUCTS IN CART ~</h1>  
@@ -126,7 +128,6 @@ export const showCart = (shoppingCart) => {
 
   // Acceder a la lista UL donde se mostrarán los productos
   const containerCartCreator = document.getElementById("container-cart");
-    
   shoppingContainer.forEach(obj => {
   const {
     amount,
@@ -138,7 +139,6 @@ export const showCart = (shoppingCart) => {
 
   console.log(obj.amount)
   let containerCart = document.createElement("div");
-      
   console.log("Mitad de proceso" )
   containerCart.innerHTML = `
     <img src="${image}" alt="${name}" class="card-img-top cart__img-cart">

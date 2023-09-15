@@ -17,6 +17,7 @@ let path = "pizza";
 let isPizza = window.location.pathname.includes("index");
 if (!isPizza) {
 	path = window.location.pathname.split("/")[2].split(".")[0];
+  console.log(`Aca vemos el path ${path}${path}`);
 }
 
 // Realizamos la solicitud para cargar los archivos json

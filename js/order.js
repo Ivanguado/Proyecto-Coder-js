@@ -41,4 +41,5 @@ formOrdeId.addEventListener("submit", (e) => {
 
     // Abre una nueva ventana o pestaña con el enlace de WhatsApp
     window.open(url, "_blank");
+    localStorage.clear();
 });

@@ -1,7 +1,7 @@
 [
     
 	{
-		"id": 1,
+		"id": 37,
 		"name": "CLASSIC",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
@@ -10,7 +10,7 @@
 		"imageCart": "Images/carrito-de-compras.png"
 	},
 	{
-		"id": 2,
+		"id": 38,
 		"name": "BBQ",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
@@ -19,7 +19,7 @@
 		"imageCart": "Imagenes/carrito-de-compras.png"
 	},
 	{ 
-		"id": 3,
+		"id": 39,
 		"name": "BBQ RANCH",
 		"amount": 1600,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
@@ -29,7 +29,7 @@
 		"total": 0
 	},
 	{
-		"id": 4,
+		"id": 40,
 		"name": "VEGETARIAN",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
@@ -39,7 +39,7 @@
 		"total": 0
 	},
 	{
-		"id": 5,
+		"id": 41,
 		"name": "SPICY JALAPENO",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
@@ -49,7 +49,7 @@
 		"total": 0
 	},
 	{
-		"id": 6,
+		"id": 42,
 		"name": "MEDITERRANEA",
 		"amount": 1,
         "description": "Some quick example UNOOOO to build on the card title and make up the bulk of the card's content.",
@@ -57,7 +57,5 @@
         "image": "../Images/pizza_test.jpg",
 		"imageCart": "Imagenes/carrito-de-compras.png",
 		"total": 0
-	}
-	
-	
+	}	
 ]
