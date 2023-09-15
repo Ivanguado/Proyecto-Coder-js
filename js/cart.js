@@ -15,15 +15,12 @@ export const addToCart = (e,data) =>{
 
   if(relegatedProduct != -1){
     shoppingCart[relegatedProduct].amount++
-   
   }else{
     chosenProduct = data.find( obj=> obj.id === parseInt(e.currentTarget.id));
     shoppingCart.push(chosenProduct);
-    
   }
 
-  ///////////////////////////////////////////////////////////////////
-  /*
+  /////////////////////////////////////////////////////////
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -48,43 +45,44 @@ export const addToCart = (e,data) =>{
     icon: 'success',
     title: 'Product Select',
   });
-  */
+
   ////////////////////////////////////////////////////////////////////
   
   localStorage.setItem("cart", JSON.stringify(shoppingCart))
   showCart(shoppingCart);
 }
 
-
+//Exportacion de showCart
 export const showCart = (shoppingCart) => {
-shoppingCart.forEach(product => {
-const {amount} = product;
+  shoppingCart.forEach(product => {
+  const {amount} = product;
 
-let totalCantidad = 0;
-for (const item of shoppingCart) {
-    totalCantidad += item.amount;
-  }
+  let totalCantidad = 0;
+  for (const item of shoppingCart) {
+      totalCantidad += item.amount;
+}
  
   const listProduc = document.getElementById("domIngres");
-  domIngres.innerHTML = ""; 
+    domIngres.innerHTML = ""; 
   let domIngreso = document.createElement("p");
-  domIngreso.innerHTML = `<p>${totalCantidad}</p>`;
+    domIngreso.innerHTML = `<p>${totalCantidad}</p>`;
   listProduc.appendChild(domIngreso);
 });
-      // Agrega un event listener al botón del carrito
-      const cartButton = document.getElementById("btn_Carrito");
+    // Agrega un event listener al botón del carrito
+    const cartButton = document.getElementById("btn_Carrito");
       cartButton.addEventListener("click", (shoppingCart) => {
       
-      // Implementa el código para mostrar detalles del artículo u otras acciones
-      console.log("LLegasta al container del carrito")
-      shoppingContainer = JSON.parse(localStorage.getItem("cart")) 
+    // Implementa el código para mostrar detalles del artículo u otras acciones
+    console.log("LLegasta al container del carrito")
+    shoppingContainer = JSON.parse(localStorage.getItem("cart")) 
 
-      
-          
-      const containerFloatCreators = document.getElementById("container_float--cart");
+    const containerFloatCreators2 = document.getElementById("container_float--cart2");
+    const containerFloatCreators = document.getElementById("container_float--cart");
 
-      let containerFloat = document.createElement("div");
-      containerFloat.innerHTML = `
+    // ! Creación de Container en el index ! // 
+  if(containerFloatCreators){
+    let containerFloat = document.createElement("div");
+    containerFloat.innerHTML = `
       <div >  
       <h1 class="container__h1">~ PRODUCTS IN CART ~</h1>  
       <div id = "container-cart">
@@ -94,85 +92,71 @@ for (const item of shoppingCart) {
       </div>
       </div>`
     containerFloatCreators.appendChild(containerFloat);
+      }else if(containerFloatCreators2){
+
+              // ! Creación de Container en el sand, salad, empa, burguer, drinks ! //             
+              let containerFloat2 = document.createElement("div");
+              containerFloat2.innerHTML = `
+              <div >  
+              <h1 class="container__h1">~ PRODUCTS IN CART ~</h1>  
+              <div id = "container-cart">
+              </div>
+              <div class="container__btn">
+              <button class="btn2 btn-primary2"><a href="../Products/order.html" class="container_btn-style">Continue Order</a></button>
+              </div>
+              </div>`
+            containerFloatCreators2.appendChild(containerFloat2);
+      };
     
 
-    shoppingContainer.forEach(product => {
-      product.total = product.amount * product.price;
-    })
+  // Suma de los productos individualmente
+  shoppingContainer.forEach(product => {
+    product.total = product.amount * product.price;
+  })
     
     console.log(shoppingContainer);
-    
-    priceTotal = shoppingContainer.reduce((total, product) => {
-      return total + (product.price * product.amount);
-    },0)                
-    console.log(`Precio total de la compra ${priceTotal}`);
+  //Suma general de todos los productos
+  priceTotal = shoppingContainer.reduce((total, product) => {
+    return total + (product.price * product.amount);
+  },0)                
+  console.log(`Precio total de la compra ${priceTotal}`);
       
     
-      
+// ! Creación de las cartas dentro del contenedor del carrito ! //
 
-        // Acceder a la lista UL donde se mostrarán los productos
-      const containerCartCreator = document.getElementById("container-cart");
+  // Acceder a la lista UL donde se mostrarán los productos
+  const containerCartCreator = document.getElementById("container-cart");
     
-      shoppingContainer.forEach(obj => {
-      const {
-        amount,
-        price,
-        image,
-        name,
-        total
-      } = obj;
-        
-      
+  shoppingContainer.forEach(obj => {
+  const {
+    amount,
+    price,
+    image,
+    name,
+    total
+  } = obj;
 
-
-        console.log(obj.amount)
-      let containerCart = document.createElement("div");
+  console.log(obj.amount)
+  let containerCart = document.createElement("div");
       
-        console.log("Mitad de proceso" )
-      containerCart.innerHTML = `
-      <img src="${image}" alt="${name}" class="card-img-top cart__img-cart">
-      <div class="card-body pizza cart__img-cart" >
-          <h2 class="card__title-cart">${name}</h2>
-          <p class="cart__subtitle-cart">Price <a class="card__number-cart" >${price}</a></p>
-          <p class="cart__subtitle-cart">Ordered quantity: <a class="card__number-cart" >${amount}</a></p>
-          <p class="cart__subtitle-cart">Total product: <a class="card__number-cart" >${total}</a></p>
-          </div>  
-      </div> 
-      `;
+  console.log("Mitad de proceso" )
+  containerCart.innerHTML = `
+    <img src="${image}" alt="${name}" class="card-img-top cart__img-cart">
+    <div class="card-body pizza cart__img-cart" >
+        <h2 class="card__title-cart">${name}</h2>
+        <p class="cart__subtitle-cart">Price <a class="card__number-cart" >${price}</a></p>
+        <p class="cart__subtitle-cart">Ordered quantity: <a class="card__number-cart" >${amount}</a></p>
+        <p class="cart__subtitle-cart">Total product: <a class="card__number-cart" >${total}</a></p>
+        </div>  
+    </div> 
+    `;
      
-    containerCartCreator.appendChild(containerCart);
-    
-
+  containerCartCreator.appendChild(containerCart);
   })
   order(shoppingContainer)  
   })
-  } // Fin de la funcion
-  
-  /*
-function order (shoppingContainer) {
-  let formOrder = document.getElementById("order_btn-finaly");
-  formOrder.addEventListener("click", (shoppingContainer) => {
-    
-    console.log(shoppingContainer);
-    console.log(priceTotal);
+} // Fin de la funcion
 
-    const name = document.getElementById('order_name').value;
-    const userName = document.getElementById('user_name').value;
-    const phoneNumber = document.getElementById('phone_number').value;
-    const adress = document.getElementById('adress').value;
-    const adressNumber = document.getElementById('adressNumber').value;
-    const paymentMethod = document.getElementById('payment_method').value;
-    const mensaje = "Aca estamos escribiendo el mensaje";
-    console.log("llegamos al final del proyecto")
-  // Construye el enlace de WhatsApp
-    const url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(mensaje); 
-  // Abre una nueva ventana o pestaña con el enlace de WhatsApp
-    window.open(url, '_blank');
- 
-  });
-};
-
-*/
 
 
 

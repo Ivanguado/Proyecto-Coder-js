@@ -2,6 +2,7 @@
 import { addToCart, showCart } from "./cart.js"; 
 const cartJson = JSON.parse(localStorage.getItem("cart")) || []; //Traemos de seccion storage
 
+// Declaramos las rutas de los distintos catalogos.json
 const rutas = {
 	pizza: "./folders-JSON/pizza-catalogue.json",
 	burger: "../folders-JSON/burger-catalogue.json",
@@ -11,25 +12,27 @@ const rutas = {
 	sandwiches: "../folders-JSON/sandwiches-catalogue.json",
 };
 
+//Traemos el catalogo correspondiente
 let path = "pizza";
 let isPizza = window.location.pathname.includes("index");
 if (!isPizza) {
 	path = window.location.pathname.split("/")[2].split(".")[0];
 }
 
-// Realizar una solicitud para cargar los archivos json
+// Realizamos la solicitud para cargar los archivos json
 fetch(rutas[path])
 	.then((response) => response.json())
 	.then((data) => {
 		showProducts(data);
 	});
 
+
 function showProducts(data){
   console.log(path);
   // Acceder a la lista UL donde se mostrarán los productos
 const listaProductos = document.getElementById(`cartGral`);
 
-// Iterar a través de los productos y agregarlos a la lista UL
+// Iteramos a través de los productos y agregamos la lista UL
 data.forEach(product => {
 const {image,
       name,
@@ -49,7 +52,7 @@ const {image,
  </div> 
  `;
 listaProductos.appendChild(listItem);
-    })
+})
 
 const buyButtons = document.querySelectorAll('.makeAnOrder');
 buyButtons.forEach(btn => {
