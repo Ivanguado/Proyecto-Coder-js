@@ -7,8 +7,7 @@ let priceTotal = 0;
 
 //Declaramos la exportacion del codigo y de la funcion para su funcionamiento.
 export const addToCart = (e,data) =>{
-
-
+  
   // El findIndex lo utilizo para saber cual es el indice del producto si es que existe
   const relegatedProduct = shoppingCart.findIndex(obj => obj.id === parseInt(e.currentTarget.id));
   console.log(relegatedProduct);
@@ -45,44 +44,51 @@ export const addToCart = (e,data) =>{
     icon: 'success',
     title: 'Product Select',
   });
-  
-  ////////////////////////////////////////////////////////////////////
-  
+    
   localStorage.setItem("cart", JSON.stringify(shoppingCart))
   showCart(shoppingCart);
 }
 
+
+
+
 //Exportacion de showCart
 export const showCart = (shoppingCart) => {
-  shoppingCart.forEach(product => {
-  const {amount} = product;
 
-  let totalCantidad = 0;
-  for (const item of shoppingCart) {
-      totalCantidad += item.amount;
-}
- 
-  const listProduc = document.getElementById("domIngres");
-    domIngres.innerHTML = ""; 
-  let domIngreso = document.createElement("p");
-    domIngreso.innerHTML = `<p>${totalCantidad}</p>`;
-  listProduc.appendChild(domIngreso);
-});
-    // Agrega un event listener al botón del carrito
+  // Sumamos las cantidades que se ven en la imagen del carrito
+  shoppingCart.forEach(product => {
+    const {amount} = product;
+  
+    let totalCantidad = 0;
+    for (const item of shoppingCart) {
+        totalCantidad += item.amount;
+  }
+   
+// Mostramos las cantidades que se ven en la imagen del carrito  
+    const listProduc = document.getElementById("domIngres");
+      domIngres.innerHTML = ""; 
+    let domIngreso = document.createElement("p");
+      domIngreso.innerHTML = `<p>${totalCantidad}</p>`;
+    listProduc.appendChild(domIngreso);
+  });
+
+
+// Agrega un event listener al botón del carrito
     const cartButton = document.getElementById("btn_Carrito");
       cartButton.addEventListener("click", (shoppingCart) => {
       
-    // Implementa el código para mostrar detalles del artículo u otras acciones
+// Implementa el código para mostrar detalles del artículo u otras acciones
     console.log("LLegasta al container del carrito")
     shoppingContainer = JSON.parse(localStorage.getItem("cart")) 
 
     const containerFloatCreators2 = document.getElementById("container_float--cart2");
     const containerFloatCreators = document.getElementById("container_float--cart");
 
-    // ! Creación de Container en el index ! // 
+// ! Creación de Container en el index ! // 
   if(containerFloatCreators){
+    
     let containerFloat = document.createElement("div");
-    containerFloat.innerHTML = "";
+    containerFloat.innerHTML = ``;
     containerFloat.innerHTML = `
       <div >  
       <h1 class="container__h1">~ PRODUCTS IN CART ~</h1>  
@@ -97,7 +103,7 @@ export const showCart = (shoppingCart) => {
 
               // ! Creación de Container en el sand, salad, empa, burguer, drinks ! //             
               let containerFloat2 = document.createElement("div");
-              containerFloat2.innerHTML = "";
+              containerFloat2.innerHTML = ` `;
               containerFloat2.innerHTML = `
               <div >  
               <h1 class="container__h1">~ PRODUCTS IN CART ~</h1>  
@@ -153,7 +159,7 @@ export const showCart = (shoppingCart) => {
      
   containerCartCreator.appendChild(containerCart);
   })
-  order(shoppingContainer)  
+  //order(shoppingContainer)  
   })
 } // Fin de la funcion
 
