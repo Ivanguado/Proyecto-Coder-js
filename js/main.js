@@ -54,7 +54,14 @@ const {image,
  `;
 listaProductos.appendChild(listItem);
 })
-
+/*
+const refreshPag = document.querySelectorAll('.makeAnOrder');
+refreshPag.forEach(btn => {
+  btn.addEventListener('click', (e) =>{
+    refreshPag.innerHTML = "";
+  }) 
+})
+*/
 const buyButtons = document.querySelectorAll('.makeAnOrder');
 buyButtons.forEach(btn => {
 btn.addEventListener('click', (e) => addToCart(e,data));

@@ -10,7 +10,7 @@ export const addToCart = (e,data) =>{
   
   // El findIndex lo utilizo para saber cual es el indice del producto si es que existe
   const relegatedProduct = shoppingCart.findIndex(obj => obj.id === parseInt(e.currentTarget.id));
-  console.log(relegatedProduct);
+  console.log(`"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" ${relegatedProduct}`);
 
   if(relegatedProduct != -1){
     shoppingCart[relegatedProduct].amount++
@@ -127,7 +127,17 @@ export const showCart = (shoppingCart) => {
     return total + (product.price * product.amount);
   },0)                
   console.log(`Precio total de la compra ${priceTotal}`);
-      
+
+
+
+  /*
+  let amountRest = document.getElementById("amount_rest");
+  amountRest.addEventListener(click, (e) => {
+    e.priceTotal-= e.price;
+  })
+*/
+
+  
     
 // ! Creación de las cartas dentro del contenedor del carrito ! //
 
@@ -144,6 +154,9 @@ export const showCart = (shoppingCart) => {
     total
   } = obj;
 
+
+
+
   if(containerCartCreator){
   console.log(obj.amount)
   let containerCart = document.createElement("div");
@@ -153,8 +166,8 @@ export const showCart = (shoppingCart) => {
     <div class="card-body pizza cart__img-cart" >
         <h2 class="card__title-cart">${name}</h2>
         <p class="cart__subtitle-cart">Price <a class="card__number-cart" >${price}</a></p>
-        <p class="cart__subtitle-cart">Ordered quantity: <a class="card__number-cart" >${amount}</a></p>
-        <p class="cart__subtitle-cart">Total product: <a class="card__number-cart" >${total}</a></p>
+        <p class="cart__subtitle-cart">Quantity: <button id="amount_rest"> - </button><a class="card__number-cart" >${amount}</a><button id="amount_plus"> + </button></p>
+        <p class="cart__subtitle-cart">Total product:<a class="card__number-cart" >${total}</a></p>
         </div>  
     </div> 
     `;
@@ -175,10 +188,50 @@ export const showCart = (shoppingCart) => {
     `;
      
   containerCartCreator2.appendChild(containerCart);
+
+ 
 }
+
+let amountPlus = document.getElementById("amount_plus");
+
+
+
+
+if(amountPlus){
+  amountPlus.addEventListener("click", (event) => {
+    let amountId =  shoppingContainer.findIndex((obj) => obj.id === event.currentTarget.id);
+    let amountObjet = shoppingContainer.find((obj) => obj.name === obj.name);
+
+    console.log(`tomamos el id ${typeof amountId}`);
+    console.log(`tomamos el objeto ${amountObjet}`);
+  
+    
+      const {amount, price, total} = shoppingContainer;
+      total += price;
+      amount = amount++;
+      console.log(`El total modificado de total ${total}`)
+      console.log(`El total de amount ${amount}`)
+    
+    /*
+    shoppingContainer[0].total += shoppingContainer[0].price;
+    console.log(`amountPlus ${shoppingContainer[0].total}`);
+    console.log(shoppingContainer[0]); 
+    */
   })
+  }else{
+    alert("sin ingreso");
+  } 
+
+  
+
+  })
+  
+ 
   //order(shoppingContainer)  
   })
+
+
+ 
 } // Fin de la funcion
 
 
