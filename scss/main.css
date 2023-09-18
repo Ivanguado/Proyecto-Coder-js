@@ -299,6 +299,10 @@ ul li a {
   color: #c7bebe !important;
 }
 
+#container-cart2{
+   display: flex;
+}
+
 #container-cart{
   display: flex;
   flex-wrap: wrap;

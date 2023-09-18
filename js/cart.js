@@ -88,7 +88,6 @@ export const showCart = (shoppingCart) => {
   if(containerFloatCreators){
     
     let containerFloat = document.createElement("div");
-    containerFloat.innerHTML = ``;
     containerFloat.innerHTML = `
       <div >  
       <h1 class="container__h1">~ PRODUCTS IN CART ~</h1>  
@@ -103,11 +102,11 @@ export const showCart = (shoppingCart) => {
 
               // ! Creación de Container en el sand, salad, empa, burguer, drinks ! //             
               let containerFloat2 = document.createElement("div");
-              containerFloat2.innerHTML = ` `;
+              containerFloat2.innerHTML = `""`;
               containerFloat2.innerHTML = `
               <div >  
               <h1 class="container__h1">~ PRODUCTS IN CART ~</h1>  
-              <div id = "container-cart">
+              <div id = "container-cart2">
               </div>
               <div class="container__btn">
               <button class="btn2 btn-primary2"><a href="../Products/order.html" class="container_btn-style">Continue Order</a></button>
@@ -134,6 +133,8 @@ export const showCart = (shoppingCart) => {
 
   // Acceder a la lista UL donde se mostrarán los productos
   const containerCartCreator = document.getElementById("container-cart");
+  const containerCartCreator2 = document.getElementById("container-cart2");
+
   shoppingContainer.forEach(obj => {
   const {
     amount,
@@ -143,6 +144,7 @@ export const showCart = (shoppingCart) => {
     total
   } = obj;
 
+  if(containerCartCreator){
   console.log(obj.amount)
   let containerCart = document.createElement("div");
   console.log("Mitad de proceso" )
@@ -158,6 +160,22 @@ export const showCart = (shoppingCart) => {
     `;
      
   containerCartCreator.appendChild(containerCart);
+}else if(containerCartCreator2){
+  let containerCart = document.createElement("div");
+  console.log("Mitad de proceso" )
+  containerCart.innerHTML = `
+    <img src="../${image}" alt="${name}" class="card-img-top cart__img-cart">
+    <div class="card-body pizza cart__img-cart" >
+        <h2 class="card__title-cart">${name}</h2>
+        <p class="cart__subtitle-cart">Price <a class="card__number-cart" >${price}</a></p>
+        <p class="cart__subtitle-cart">Ordered quantity: <a class="card__number-cart" >${amount}</a></p>
+        <p class="cart__subtitle-cart">Total product: <a class="card__number-cart" >${total}</a></p>
+        </div>  
+    </div> 
+    `;
+     
+  containerCartCreator2.appendChild(containerCart);
+}
   })
   //order(shoppingContainer)  
   })
