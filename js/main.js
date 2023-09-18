@@ -48,7 +48,7 @@ const {image,
      <h4 class="card-title2">${name}</h4>
      <p class="card-text p">${description}</p>
      <h5 class="card-title2">Price: $ ${price}</h5>
-     <button class="makeAnOrder  btn2 btn-primary2" alt="Pizza Muzarella" id="${id}">Agregar al carrito</button>  
+     <button class="makeAnOrder  btn2 btn-primary2" alt="Pizza Muzarella" id="${id}">Add to cart</button>  
      </div>  
  </div> 
  `;
