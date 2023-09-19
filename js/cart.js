@@ -90,13 +90,15 @@ export const showCart = (shoppingCart) => {
     let containerFloat = document.createElement("div");
     containerFloat.innerHTML = `
       <div >  
+      <div id="magic-square" class="oculto mostrar" ></div>
       <h1 class="container__h1">~ PRODUCTS IN CART ~</h1>  
       <div id = "container-cart">
       </div>
       <div class="container__btn">
       <button class="btn2 btn-primary2"><a href="Products/order.html" class="container_btn-style">Continue Order</a></button>
       </div>
-      </div>`
+      </div>
+      <div id="btn-mover" class="btnClose">Button</div>`
     containerFloatCreators.appendChild(containerFloat);
       }else if(containerFloatCreators2){
 
@@ -105,15 +107,27 @@ export const showCart = (shoppingCart) => {
               containerFloat2.innerHTML = `""`;
               containerFloat2.innerHTML = `
               <div >  
+              <div id="magic-square" class="oculto mostrar" ></div>
               <h1 class="container__h1">~ PRODUCTS IN CART ~</h1>  
               <div id = "container-cart2">
               </div>
               <div class="container__btn">
               <button class="btn2 btn-primary2"><a href="../Products/order.html" class="container_btn-style">Continue Order</a></button>
               </div>
-              </div>`
+              <div id="btn-mover" class="btnClose">Button</div>
+              </div>
+              `
             containerFloatCreators2.appendChild(containerFloat2);
       };
+
+  const btnMove = document.getElementById("btn-mover");
+  btnMove.addEventListener("click", mover)
+
+  function mover(){
+    const elemento = document.getElementById("magic-square");
+    elemento.classList.remove("oculto");
+    console.log("Estoy en el boton este que no anda")
+  }
     
 
   // Suma de los productos individualmente
@@ -191,7 +205,7 @@ export const showCart = (shoppingCart) => {
 
  
 }
-
+/*
 let amountPlus = document.getElementById("amount_plus");
 
 
@@ -212,16 +226,16 @@ if(amountPlus){
       console.log(`El total modificado de total ${total}`)
       console.log(`El total de amount ${amount}`)
     
-    /*
+    
     shoppingContainer[0].total += shoppingContainer[0].price;
     console.log(`amountPlus ${shoppingContainer[0].total}`);
     console.log(shoppingContainer[0]); 
-    */
+    
   })
   }else{
     alert("sin ingreso");
   } 
-
+*/
   
 
   })
