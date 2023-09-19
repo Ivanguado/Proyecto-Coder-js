@@ -1,4 +1,3 @@
-
 let shoppingCart = JSON.parse(localStorage.getItem("cart")) || [];
 
 let shoppingContainer = "";
@@ -186,30 +185,3 @@ export const showCart = (shoppingCart) => {
 
 
 
-/*
-
-  //Acceder a la lista de UL donde se mostrarán los productos
-  const listProduc = document.getElementById("cartDomm");
-  
-  // Borrar el contenido anterior para evitar duplicados
- cartDomm.innerHTML = "";
-  shoppingCart.forEach(product => {
-      console.log(product);
-      const {amount,
-             id,
-             imageCart
-            } = product;
-      let cartDom = document.createElement("div");
-      cartDom.classList.add("cart-item"); // Agrega una clase para fines de estilo
-      cartDom.innerHTML = `
-      <div class="header_cart-notification">${amount}</div>
-      <button class="btn" id="btn_Carrito" data-id="${id}">
-        <img src="${imageCart}" alt="Botón Carrito">
-      </button>
-      `;
-        
-         // Agrega el elemento cartDom al elemento cartDomm
-        listProduc.appendChild(cartDom);
-      //);
-// };
-*/
