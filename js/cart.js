@@ -10,7 +10,6 @@ export const addToCart = (e,data) =>{
   
   // El findIndex lo utilizo para saber cual es el indice del producto si es que existe
   const relegatedProduct = shoppingCart.findIndex(obj => obj.id === parseInt(e.currentTarget.id));
-  console.log(`"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" ${relegatedProduct}`);
 
   if(relegatedProduct != -1){
     shoppingCart[relegatedProduct].amount++
@@ -19,7 +18,6 @@ export const addToCart = (e,data) =>{
     shoppingCart.push(chosenProduct);
   }
 
-  
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -27,19 +25,13 @@ export const addToCart = (e,data) =>{
     timer: 3000,
     timerProgressBar: true,
     customClass: {
-      // Agregar una clase CSS personalizada al Toast
-      
-    container: 'custom-swal-container',
-    popup: 'custom-swal-popup',
-    title: 'custom-swal-title',
-    icon: 'custom-swal-icon',
+      title: 'custom-swal-title',
     },
     didOpen: (toast) => {
       toast.addEventListener('mouseenter', Swal.stopTimer);
       toast.addEventListener('mouseleave', Swal.resumeTimer);
     },
-  });
-  
+  }); 
   Toast.fire({
     icon: 'success',
     title: 'Product Select',
@@ -49,16 +41,12 @@ export const addToCart = (e,data) =>{
   showCart(shoppingCart);
 }
 
-
-
-
 //Exportacion de showCart
 export const showCart = (shoppingCart) => {
 
   // Sumamos las cantidades que se ven en la imagen del carrito
   shoppingCart.forEach(product => {
-    const {amount} = product;
-  
+    const {amount} = product; 
     let totalCantidad = 0;
     for (const item of shoppingCart) {
         totalCantidad += item.amount;
@@ -78,7 +66,6 @@ export const showCart = (shoppingCart) => {
       cartButton.addEventListener("click", (shoppingCart) => {
       
 // Implementa el código para mostrar detalles del artículo u otras acciones
-    console.log("LLegasta al container del carrito")
     shoppingContainer = JSON.parse(localStorage.getItem("cart")) 
 
     const containerFloatCreators2 = document.getElementById("container_float--cart2");
@@ -121,15 +108,13 @@ export const showCart = (shoppingCart) => {
       };
 
   const btnMove = document.getElementById("btn-mover");
-  btnMove.addEventListener("click", mover)
+    btnMove.addEventListener("click", mover)
 
   function mover(){
     const elemento = document.getElementById("magic-square");
     elemento.classList.remove("oculto");
-    console.log("Estoy en el boton este que no anda")
   }
     
-
   // Suma de los productos individualmente
   shoppingContainer.forEach(product => {
     product.total = product.amount * product.price;
@@ -140,18 +125,7 @@ export const showCart = (shoppingCart) => {
   priceTotal = shoppingContainer.reduce((total, product) => {
     return total + (product.price * product.amount);
   },0)                
-  console.log(`Precio total de la compra ${priceTotal}`);
-
-
-
-  /*
-  let amountRest = document.getElementById("amount_rest");
-  amountRest.addEventListener(click, (e) => {
-    e.priceTotal-= e.price;
-  })
-*/
-
-  
+ 
     
 // ! Creación de las cartas dentro del contenedor del carrito ! //
 
@@ -168,28 +142,21 @@ export const showCart = (shoppingCart) => {
     total
   } = obj;
 
-
-
-
   if(containerCartCreator){
-  console.log(obj.amount)
   let containerCart = document.createElement("div");
-  console.log("Mitad de proceso" )
   containerCart.innerHTML = `
     <img src="${image}" alt="${name}" class="card-img-top cart__img-cart">
     <div class="card-body pizza cart__img-cart" >
         <h2 class="card__title-cart">${name}</h2>
         <p class="cart__subtitle-cart">Price <a class="card__number-cart" >${price}</a></p>
-        <p class="cart__subtitle-cart">Quantity: <button id="amount_rest"> - </button><a class="card__number-cart" >${amount}</a><button id="amount_plus"> + </button></p>
+        <p class="cart__subtitle-cart">Quantity:<a class="card__number-cart" >${amount}</a></p>
         <p class="cart__subtitle-cart">Total product:<a class="card__number-cart" >${total}</a></p>
         </div>  
     </div> 
-    `;
-     
+    `;    
   containerCartCreator.appendChild(containerCart);
 }else if(containerCartCreator2){
   let containerCart = document.createElement("div");
-  console.log("Mitad de proceso" )
   containerCart.innerHTML = `
     <img src="../${image}" alt="${name}" class="card-img-top cart__img-cart">
     <div class="card-body pizza cart__img-cart" >
@@ -200,52 +167,10 @@ export const showCart = (shoppingCart) => {
         </div>  
     </div> 
     `;
-     
   containerCartCreator2.appendChild(containerCart);
-
- 
 }
-/*
-let amountPlus = document.getElementById("amount_plus");
-
-
-
-
-if(amountPlus){
-  amountPlus.addEventListener("click", (event) => {
-    let amountId =  shoppingContainer.findIndex((obj) => obj.id === event.currentTarget.id);
-    let amountObjet = shoppingContainer.find((obj) => obj.name === obj.name);
-
-    console.log(`tomamos el id ${typeof amountId}`);
-    console.log(`tomamos el objeto ${amountObjet}`);
-  
-    
-      const {amount, price, total} = shoppingContainer;
-      total += price;
-      amount = amount++;
-      console.log(`El total modificado de total ${total}`)
-      console.log(`El total de amount ${amount}`)
-    
-    
-    shoppingContainer[0].total += shoppingContainer[0].price;
-    console.log(`amountPlus ${shoppingContainer[0].total}`);
-    console.log(shoppingContainer[0]); 
-    
-  })
-  }else{
-    alert("sin ingreso");
-  } 
-*/
-  
-
-  })
-  
- 
-  //order(shoppingContainer)  
-  })
-
-
- 
+})
+})//order(shoppingContainer)
 } // Fin de la funcion
 
 
@@ -287,19 +212,4 @@ if(amountPlus){
         listProduc.appendChild(cartDom);
       //);
 // };
-*/
-
-
-
-
-/*
-      <div class="card"  style="width: 18rem;">
-      <img src="${image}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h2 class="card-title">${name}</h2>
-        <h3 class="card-title">${price}</h3>
-        <h3 class="card-text">Cantidad${amount}</h3>
-        <h3 class="card-text">Cantidad${total}</h3>
-      </div>
-    </div>
 */

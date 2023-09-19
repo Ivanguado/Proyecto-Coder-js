@@ -12,7 +12,6 @@ formOrdeId.addEventListener("submit", (e) => {
     const paymentMethod = document.getElementById('validationTooltip04').value;
 
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    console.log(cart);
 
     cart.forEach((product) => {
         const { name, amount, price } = product;
@@ -24,8 +23,6 @@ formOrdeId.addEventListener("submit", (e) => {
 
     const total = cart.reduce((subtotal, product) => subtotal + product.price * product.amount, 0);
     msj += `Total: $${total}`;
-    console.log(total);
-    console.log(msj);
 
     // Construye el enlace de WhatsApp
     const url = "https://api.whatsapp.com/send?phone=" + 542317454401 + "&text=" + encodeURIComponent(`♦ Online Pizza Store ♦ 

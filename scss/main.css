@@ -262,9 +262,6 @@ ul li a {
 .btn2 {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
-
-
-  
   --bs-btn-color: var(--bs-body-color);
   --bs-btn-border-width: var(--bs-border-width);
   --bs-btn-border-color: transparent;

@@ -17,7 +17,6 @@ let path = "pizza";
 let isPizza = window.location.pathname.includes("index");
 if (!isPizza) {
 	path = window.location.pathname.split("/")[2].split(".")[0];
-  console.log(`Aca vemos el path ${path}${path}`);
 }
 
 // Realizamos la solicitud para cargar los archivos json
@@ -29,7 +28,6 @@ fetch(rutas[path])
 
 
 function showProducts(data){
-  console.log(path);
   // Acceder a la lista UL donde se mostrarán los productos
 const listaProductos = document.getElementById(`cartGral`);
 
@@ -54,22 +52,11 @@ const {image,
  `;
 listaProductos.appendChild(listItem);
 })
-/*
-const refreshPag = document.querySelectorAll('.makeAnOrder');
-refreshPag.forEach(btn => {
-  btn.addEventListener('click', (e) =>{
-    refreshPag.innerHTML = "";
-  }) 
-})
-*/
 const buyButtons = document.querySelectorAll('.makeAnOrder');
 buyButtons.forEach(btn => {
 btn.addEventListener('click', (e) => addToCart(e,data));
-
 })
 }
-
-
 showCart(cartJson);
 
 
