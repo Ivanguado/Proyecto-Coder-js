@@ -84,7 +84,7 @@ export const showCart = (shoppingCart) => {
       <button class="btn2 btn-primary2"><a href="Products/order.html" class="container_btn-style">Continue Order</a></button>
       </div>
       </div>
-      <div id="btn-mover" class="btnClose">Button</div>`
+      <div id="btn-mover" ></div>`
     containerFloatCreators.appendChild(containerFloat);
       }else if(containerFloatCreators2){
 
@@ -100,7 +100,7 @@ export const showCart = (shoppingCart) => {
               <div class="container__btn">
               <button class="btn2 btn-primary2"><a href="../Products/order.html" class="container_btn-style">Continue Order</a></button>
               </div>
-              <div id="btn-mover" class="btnClose">Button</div>
+              <div id="btn-mover"></div>
               </div>
               `
             containerFloatCreators2.appendChild(containerFloat2);
